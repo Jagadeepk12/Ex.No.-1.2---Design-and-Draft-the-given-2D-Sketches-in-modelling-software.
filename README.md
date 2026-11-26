@@ -1,7 +1,9 @@
 # Ex.No.-1.2-Design and Draft the given 2D Sketches in modelling software.
 
 ## AIM
- To sketch the given drawing with dimensions using fusion 360 tool.
+To construct a precise 2D CAD/engineering drawing of the symmetric
+mechanical flange profile using standard drafting primitives (circles, tangent lines,
+fillets, and arrayed features) according to the specified dimensions.
  
 ## REQUIREMENTS
  1. Autodesk fusion 360
@@ -10,33 +12,81 @@
  4. 2.5 Mbps or faster download; 500 Kbps or faster upload 
  
  ## PROCEDURE
- 1.	Open new file and then select sketch icon.
- 2.	Select the plane for sketching. 
- 3.	Use sketching features (line, circle, arc, rectangle, polygon, etc.,) to draw the given sketch.
+
+ Step 1: Set Up Reference Axes & Base Grid
  
- ![image](https://user-images.githubusercontent.com/113594316/198232594-2187c1c1-4e85-437f-99f7-263bb1a3e968.png)
- 4.	Use sketch modifying features (cut, trim, mirror, move, etc.,) to edit the sketch.
+ 1. Draw primary vertical and horizontal centerline axes intersecting at the
+origin
+2. Offset the main vertical centerline to the left and right by 50𝑚𝑚 (0, 0) . to
+establish parallel centerlines at 𝑥 =− 50 𝑥=+50 and .
+3. Offset the main horizontal centerline up and down by 60𝑚𝑚 to establish
+horizontal lines at 𝑦 =+ 60 and 𝑦=−60 .
+4. Mark the 6 outer hole centers:
+   * **Top-left:** (− 50, 60)
+   * **Top-right:** (50, 60)
+   *  **Middle-left:** (−70,0)(offset 20𝑚𝑚 further left from 𝑥=−50)
+   *  **Middle-right:** (70,0) (offset 20𝑚𝑚 further right from 𝑥=+50 )
+   *  **Bottom-left:** (−50,−60)
+   *  **Bottom-right:** (50,−60)
+  
+   <img width="460" height="756" alt="image" src="https://github.com/user-attachments/assets/29a81df4-e274-4eb1-a34c-996a7e865818" />
+
+ Step 2:Draw Central Geometry
  
- ![image](https://user-images.githubusercontent.com/113594316/198232771-48e6582d-4410-430a-a9d4-70e400255580.png)
- 
- 5.	Use inspect feature to measure the dimensions of sketch.
- 
- ![image](https://user-images.githubusercontent.com/113594316/198232845-1608e574-732c-44b2-9921-39e920b70e2e.png)
- 
- 6.	After finishing the sketch use finish sketch option to finalize the sketch.
- ![image](https://user-images.githubusercontent.com/113594316/198232907-8275f39c-9031-4cf4-b0c4-8eb568e477ab.png)
- 7.	After finishing the sketch switch to drawing mode to plot the sketch in ISO standard
- 
- ![image](https://user-images.githubusercontent.com/113594316/198232997-7172a35b-79a2-45e4-88a3-5e741b4d90ce.png)
- 
- ![image](https://user-images.githubusercontent.com/113594316/198233011-28615257-fc2b-4c81-852a-49722c948e07.png)
- 
- 
- ## SKETCH
- ![image](https://user-images.githubusercontent.com/113594316/198233336-dd9f5c19-481b-486a-928a-99c32a732f89.png)
+1.From center origin (0,0):
+* Draw the innermost circle with radius 𝑅16
+* Draw concentric reference circles with radii **R21 **, **R32 **, and **R40 **.
+
+2. Construct the central web pattern:
+
+* Draw vertical parallel offset lines at 𝑥 =± 3 (total gap width 𝑅40 6𝑚𝑚 ) through
+the center.
+* Construct 6 radial slots/spokes within the annular region between ** 𝑅21 ** and
+** 𝑅32 **.
+
+<img width="423" height="580" alt="image" src="https://github.com/user-attachments/assets/39c8968b-75a1-4053-a6e2-9f73ba325ed9" />
+
+Step 3:Construct Outer Circular Features
+
+1. **Hole Circles:**
+Draw circles of radius ** 𝑅15 ** at all 6 outer center points.
+
+2. **Outer Bosses:**
+* At top-left (−50,60) , top-right (50,60) , bottom-left(50,60) , and bottom-right
+(50,−60), draw outer arcs of radius ** 𝑅21 **.
+
+* At middle-left (−70,0) and middle-right (70,0) , draw outer concentric circles of
+radius **𝑅20 **.
+
+Step 4:Connect Tangent Lines & Fillets
+
+1. *Outer Straight Tangents:* Draw straight line segments tangent to the outer
+arcs connecting:
+* Top-left arc (𝑅21) to middle-left arc (𝑅20).
+* Bottom-left arc (𝑅21) to middle-left arc (𝑅20).
+* Top-right arc (𝑅21) to middle-right arc (𝑅20).
+*  Bottom-right arc (𝑅21) to middle-right arc (𝑅20).
+
+2. *Top & Bottom Inner Fillets:*
+* Create internal tangent fillets of radius *𝑅20* connecting the top-left arc (𝑅21)
+and top-right arc (𝑅21), resting smoothly against the central *𝑅40* boundary.
+* Create identical *𝑅20* internal fillets at the bottom connecting the bottom-left
+arc (𝑅21) and bottom-right arc (𝑅21)
+
+<img width="455" height="647" alt="image" src="https://github.com/user-attachments/assets/b486c797-a824-4d52-b07e-5dd38347f82f" />
+
+Step 5:Final Cleanup & Dimensioning
+
+1. Trim all overlapping construction geometry to leave a clean outer boundary
+and inner features.
+2. Apply centerlines, dimensions, hatch/shading, and radius annotations
+matching the technical drawing.
 
  ## OUTPUT
- 
- 
+
+ <img width="996" height="648" alt="image" src="https://github.com/user-attachments/assets/f28f7ff3-5926-4a8e-934e-aa485a3e7394" />
+<br>
+ <img width="912" height="651" alt="image" src="https://github.com/user-attachments/assets/f6edc4c6-d915-4b02-aeff-92ac415764c8" />
+
  ## RESULT
  Thus the given sketch is drawn and drafted using fusion 360 tool.
